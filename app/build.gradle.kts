@@ -1,9 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("com.google.devtools.ksp")
+    id ("kotlin-kapt")
     id ("com.google.dagger.hilt.android")
-
 }
 
 android {
@@ -71,7 +70,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation (libs.retrofit)
     // Json Converter
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     // OkHttp
@@ -80,22 +79,20 @@ dependencies {
     // Coil
     implementation ("io.coil-kt:coil-compose:2.4.0")
 
-    // room
+    // Room
     implementation ("androidx.room:room-runtime:2.5.2")
-    ksp ("androidx.room:room-compiler:2.5.2")
+    kapt ("androidx.room:room-compiler:2.5.2")
     implementation ("androidx.room:room-ktx:2.5.2")
 
-    // hilt
-    implementation ("com.google.dagger:hilt-android:2.48")
-    ksp ("com.google.dagger:hilt-android-compiler:2.48")
-    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
-    ksp ("androidx.hilt:hilt-compiler:1.2.0")
+    // Dagger - Hilt
+    implementation ("com.google.dagger:hilt-android:2.51.1")
+    kapt ("com.google.dagger:hilt-compiler:2.51.1")
+
+    // navigation
     implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
-
-
 
     // Coroutines (this will allow us to run processes out side of main thread.
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
@@ -106,6 +103,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
 
+}
 
-
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

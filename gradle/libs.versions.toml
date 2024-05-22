@@ -5,9 +5,25 @@ coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
-lifecycleRuntimeKtx = "2.7.0"
+lifecycleRuntimeKtx = "2.8.0"
 activityCompose = "1.9.0"
-composeBom = "2023.08.00"
+composeBom = "2024.05.00"
+retrofit = "2.9.0"
+#retrofit_converter_gson = "2.9.0"
+#okhttp = "4.11.0"
+#coil_compose = "2.4.0"
+#room = "2.5.2"  # Using the specified version (not 2.6.1)
+#hilt = "2.48"
+#hilt_lifecycle_viewmodel = "1.0.0-alpha03"
+#hilt_compiler = "1.2.0"
+#hilt_navigation_compose = "1.2.0"
+#lifecycle_viewmodel_compose = "2.7.0"
+#coroutines_core = "1.7.1"
+#coroutines_android = "1.7.1"
+#coroutines_play_services = "1.7.1"
+#lifecycle_runtime_ktx = "2.7.0"
+#lifecycle_viewmodel_ktx = "2.7.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -24,6 +40,30 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+#retrofit_converter_gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit_converter_gson" }
+#okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+#coil_compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil_compose" }
+#room_runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+#room_ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }  # Same version for both runtime and ktx
+#
+## Hilt aliases
+#hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+#hilt_lifecycle_viewmodel = { group = "androidx.hilt", name = "hilt-lifecycle-viewmodel", version.ref = "hilt_lifecycle_viewmodel" }
+#hilt_compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt_compiler" }
+#hilt_navigation_compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt_navigation_compose" }
+#
+## Lifecycle aliases
+#lifecycle_viewmodel_compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle_viewmodel_compose" }
+#lifecycle_runtime_ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle_runtime_ktx" }
+#lifecycle_viewmodel_ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle_viewmodel_ktx" }
+#
+## Coroutines aliases
+#coroutines_core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines_core" }
+#coroutines_android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines_android" }
+#coroutines_play_services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "coroutines_play_services" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
